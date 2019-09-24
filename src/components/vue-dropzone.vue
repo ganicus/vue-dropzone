@@ -414,6 +414,7 @@ export default {
         });
       } else {
         promise.then(() => {
+          if (file.status != Dropzone.QUEUED) return
           setTimeout(() => this.dropzone.processFile(file));
         });
       }
